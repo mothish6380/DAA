@@ -1,0 +1,31 @@
+FIBBONACCI SERIES RECURSION:
+#include<stdio.h>
+int Fibonacci (int n)
+{
+  int a=-1, b=1, c, i;
+  if(n==0)
+  {
+    return 0;
+  }
+  else
+  {
+    for (i=0; i<=n; i++)
+    {
+    c=a+b;
+      printf ("%d",c);
+    a=b;
+    b=c;
+    }
+    return 0;
+  }
+}
+int main ()                                                                
+{
+  int num, i;
+  scanf ("%d”, &num);
+  printf ("FIBONACCI = ");
+  fibonacci(num);
+  return 0;     }
+OUTPUT:
+5
+FIBBONACCI= 0 1 1 2 3 5
