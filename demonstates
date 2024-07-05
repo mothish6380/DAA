@@ -1,0 +1,52 @@
+ Write C program that demonstrates the usage of these notations by analyzing the time complexity of some example algorithms.
+#include <stdio.h>
+int main() 
+{
+    int n = 10;
+    int sum = 0;
+    // O(n) - Linear Time Complexity
+    for (int i = 1; i <= n; i++) 
+    {
+        sum += i;
+    }
+    printf("Linear time complexity O(n) is %d\n",sum);
+    // O(n^2) - Quadratic Time Complexity
+    for (int i = 1; i <= n; i++) 
+    {
+        for (int j = 1; j <= n; j++)
+        {
+            sum += i + j;
+        }
+    }
+    printf("Quadratic time complexity O(n^2) is  %d\n",sum);
+    // O(log n) - Logarithmic Time Complexity
+    int val = n;
+    while (val > 1)
+    {
+        val = val / 2;
+    }
+    printf("Logarithmic time complexity O(log n) is %d",val);
+}
+Output:
+Linear time complexity O(n) is 55
+Quadratic time complexity O(n^2) is  1155
+Logarithmic time complexity O(log n) is 1
+Algorithm to Demonstrate Time Complexities
+1. Start
+2. Initialize `n` to 10.
+3. Initialize `sum` to 0.
+4. 
+   - Linear Time Complexity (O(n))*:
+     - Iterate `i` from 1 to `n`.
+     - Add `i` to `sum`.
+   
+   Quadratic Time Complexity (O(n^2)):
+     Nested loops:
+      Outer loop: Iterate `i` from 1 to `n`.
+     Inner loop: Iterate `j` from 1 to `n`.
+    Add `i + j` to `sum`.
+
+   Logarithmic Time Complexity (O(log n)):
+   While `n` is greater than 1:
+   Divide `n` by 2.
+ 5.End
