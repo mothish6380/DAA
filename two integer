@@ -1,0 +1,30 @@
+ Given two integer arrays nums1 and nums2, return an array of their intersection. Each element in the result must appear as many times as it shows in both arrays and you may return the result in any order
+#include <stdio.h>
+int main() {
+    int nums1[] = {1, 2, 2, 1};
+    int nums2[] = {2, 2};
+    int nums1Size = sizeof(nums1) / sizeof(nums1[0]);
+    int nums2Size = sizeof(nums2) / sizeof(nums2[0]);
+    int intersection[100];
+    int k = 0;
+    // Mark elements of nums2 that are used
+    int used[nums2Size];
+    for (int i = 0; i < nums2Size; i++) {
+        used[i] = 0;
+    }
+    for (int i = 0; i < nums1Size; i++) {
+        for (int j = 0; j < nums2Size; j++) {
+            if (nums1[i] == nums2[j] && !used[j]) {
+                intersection[k++] = nums1[i];
+                used[j] = 1;
+                break;
+            }
+        }
+    }
+    printf("Intersection of the two arrays: ");
+    for (int i = 0; i < k; i++) {
+        printf("%d ", intersection[i]);
+    }
+}
+Output:
+Intersection of the two arrays: 2 2
