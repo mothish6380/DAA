@@ -1,0 +1,22 @@
+Write a program to find the reverse of a given number using recursive.
+#include <stdio.h>
+int rev_num(int num, int rev) 
+{
+    if (num == 0) 
+    {
+        return rev;
+    }
+    else
+    {
+        return rev_num(num / 10, rev * 10 + num % 10);
+    }
+}
+int main() 
+{
+    int number;  // Declare the variable 'number'
+    number = rev_num(1539, 0);
+    printf("The reverse of the number is: %d\n", number);
+    return 0;
+}
+Output:
+The reverse of the number is: 9351
