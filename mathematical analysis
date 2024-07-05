@@ -1,0 +1,36 @@
+Write C programs that demonstrate the mathematical analysis of non-recursive and recursive algorithms
+#include <stdio.h>
+int main() {
+    // Non-Recursive Algorithm
+    int n = 5;
+    int sum_NonRec= 0;
+    for (int i = 1; i <= n; i++)
+    {
+        sum_NonRec+= i;
+    }
+    printf("Sum of first %d natural numbers (Non-Recursive): %d\n", n, sum_NonRec);
+
+    // Recursive Algorithm
+    int sum_Rec= 0;
+    int recursiveSum(int num) 
+    {
+        if (num != 0) {
+            return num + recursiveSum(num - 1);
+        } else {
+            return num;
+        }
+    }
+    sum_Rec= recursiveSum(n);
+    printf("Sum of first %d natural numbers (Recursive): %d\n", n, sum_Rec);
+}
+output:
+Sum of first 5 natural numbers (Non-Recursive): 15
+Sum of first 5 natural numbers (Recursive): 15	
+Algorithm for Sum of First n Natural Numbers (Iterative Approach)
+1.Start
+2.Initialize n to 5 (or any desired value).
+3.Initialize sum to 0.
+4.Iterate i from 1 to n:
+-Add i to sum.
+5.Print sum.
+6.End
